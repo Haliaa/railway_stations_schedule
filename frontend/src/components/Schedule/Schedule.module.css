@@ -1,0 +1,9 @@
+.buttonUpdate {
+    background-color: rgb(144, 187, 253);
+    margin-left: 10px;
+}
+
+.buttonDelete {
+    background-color: rgb(255, 59, 59);
+    margin-left: 20px;
+}

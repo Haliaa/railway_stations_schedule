@@ -1,0 +1,19 @@
+.trainsNav {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 40px;
+    color: #ff0000;
+    text-decoration: none;
+    text-shadow: 1px 1px 5px black;
+}
+
+.colorBlack_sizeS {
+    font-size: 35px;
+    color: black;
+    border: red solid 4px;
+    width: 200px;
+    text-align: center;
+    text-shadow: none;
+    background: rgba(63, 124, 255, 0.81);
+
+    border-radius: 20px;
+}
