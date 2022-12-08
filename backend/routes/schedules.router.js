@@ -1,34 +1,31 @@
 const schedulesRouter = require("express").Router()
 
-// const {commonMiddleware, fileMiddleware, clientMiddleware}= require('../middlewares')
-// const {clientValidator, queryValidator} = require('../validators')
+const {commonMiddleware, scheduleMiddleware}= require('../middlewares')
+const {schedulesValidator} = require('../validators')
 const schedulesController = require('../controllers/schedules.controller')
 
 schedulesRouter.get('/',
-    // commonMiddleware.isDateValid(queryValidator.findAll, 'query'),
+    commonMiddleware.isDateValid(schedulesValidator.findAll, 'query'),
     schedulesController.getSchedules)
 
 schedulesRouter.get('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    scheduleMiddleware.isSchedulePresent,
     schedulesController.getSchedule)
 
 schedulesRouter.post('/',
-    // commonMiddleware.isDateValid(clientValidator.newClientValidator),
-    // fileMiddleware.checkClientAvatar,
-    // clientMiddleware.isClientUnique,
+    commonMiddleware.isDateValid(schedulesValidator.newSchedule),
     schedulesController.postSchedule)
 
 schedulesRouter.put('/:id',
-    // commonMiddleware.isIdValid,
-    // fileMiddleware.checkClientAvatar,
-    // commonMiddleware.isDateValid(clientValidator.updateClientValidator),
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    commonMiddleware.isDateValid(schedulesValidator.updateSchedule),
+    scheduleMiddleware.isSchedulePresent,
     schedulesController.updateSchedule)
 
 schedulesRouter.delete('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    scheduleMiddleware.isSchedulePresent,
     schedulesController.deleteSchedule)
 
 module.exports = schedulesRouter;

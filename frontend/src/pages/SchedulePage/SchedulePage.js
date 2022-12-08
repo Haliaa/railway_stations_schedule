@@ -3,9 +3,11 @@ import {useLocation, useParams} from "react-router-dom";
 
 import {schedulesService} from "../../services";
 import {ScheduleForm, ScheduleDetails} from "../../components";
+import {useSelector} from "react-redux";
 
 export const SchedulePage = () => {
     const [schedule, setSchedule] = useState(null)
+    const {scheduleForUpdate} = useSelector(state => state.schedules);
     const {state} = useLocation()
     const {id} = useParams()
 
@@ -15,7 +17,7 @@ export const SchedulePage = () => {
         }else {
             schedulesService.getById(id).then(({data}) => setSchedule(data))
         }
-    },[])
+    },[scheduleForUpdate])
 
     return (
         <div>
