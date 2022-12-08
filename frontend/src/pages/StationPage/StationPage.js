@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {useLocation, useParams} from "react-router-dom";
 
 import {stationsService} from "../../services";
-import {StationDetails} from "../../components";
+import {StationDetails, StationForm} from "../../components";
 
 export const StationPage = () => {
     const [station, setStation] = useState(null)
@@ -19,6 +19,7 @@ export const StationPage = () => {
 
     return (
         <div>
+            <StationForm/>
             {station && <StationDetails station={station}/>}
         </div>
     );

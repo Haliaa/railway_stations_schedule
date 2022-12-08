@@ -1,34 +1,32 @@
 const trainsRouter = require("express").Router()
 
-// const {commonMiddleware, fileMiddleware, clientMiddleware}= require('../middlewares')
-// const {clientValidator, queryValidator} = require('../validators')
+const {commonMiddleware, trainMiddleware}= require('../middlewares')
+const {trainsValidator} = require('../validators')
 const trainsController = require('../controllers/trains.controller')
 
 trainsRouter.get('/',
-    // commonMiddleware.isDateValid(queryValidator.findAll, 'query'),
+    commonMiddleware.isDateValid(trainsValidator.findAll, 'query'),
     trainsController.getTrains)
 
 trainsRouter.get('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    trainMiddleware.isTrainPresent,
     trainsController.getTrain)
 
 trainsRouter.post('/',
-    // commonMiddleware.isDateValid(clientValidator.newClientValidator),
-    // fileMiddleware.checkClientAvatar,
-    // clientMiddleware.isClientUnique,
+    commonMiddleware.isDateValid(trainsValidator.newTrain),
+    trainMiddleware.isTrainUnique,
     trainsController.postTrain)
 
 trainsRouter.put('/:id',
-    // commonMiddleware.isIdValid,
-    // fileMiddleware.checkClientAvatar,
-    // commonMiddleware.isDateValid(clientValidator.updateClientValidator),
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    commonMiddleware.isDateValid(trainsValidator.updateTrain),
+    trainMiddleware.isTrainPresent,
     trainsController.updateTrain)
 
 trainsRouter.delete('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    trainMiddleware.isTrainPresent,
     trainsController.deleteTrain)
 
 module.exports = trainsRouter;
