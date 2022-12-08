@@ -1,4 +1,5 @@
 const CError = require('../errors/CommonError');
+
 const scheduleService = require('../services/schedules.service');
 
 module.exports = {

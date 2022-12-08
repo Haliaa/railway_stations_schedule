@@ -1,7 +1,6 @@
 const Joi = require("joi")
 
-const {stationNameValidator, platformValidator
-} = require('../validators/common.validator')
+const {stationNameValidator, platformValidator} = require('../validators/common.validator')
 
 module.exports = {
     findAll: Joi.object({

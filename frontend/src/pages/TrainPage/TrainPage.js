@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {useLocation, useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 import {trainsService} from "../../services";
 import {TrainDetails, TrainForm} from "../../components";
-import {useSelector} from "react-redux";
 
 export const TrainPage = () => {
     const [train, setTrain] = useState(null);

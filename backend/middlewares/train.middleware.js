@@ -1,4 +1,5 @@
 const CError = require('../errors/CommonError');
+
 const trainService = require('../services/trains.service');
 
 module.exports = {

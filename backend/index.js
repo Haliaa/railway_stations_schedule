@@ -17,8 +17,6 @@ mongoose.connect(MONGO_URL).then(() => {
 
 const app = express();
 
-mongoose.set('strictQuery', true);
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(expressFileUpload());

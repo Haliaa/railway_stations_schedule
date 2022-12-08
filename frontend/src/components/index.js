@@ -1,4 +1,3 @@
-export * from './Footer/Footer'
 export * from './Header/Header'
 export * from './Station/Station'
 export * from './StationForm/StationForm'

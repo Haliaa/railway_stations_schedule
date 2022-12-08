@@ -33,10 +33,10 @@
 //data in through <Table/>
 import {useEffect, useState} from "react";
 import {useLocation, useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 import {schedulesService, trainsService} from "../../services";
 import {ScheduleForm, Table} from "../../components";
-import {useSelector} from "react-redux";
 
 export const TrainSchedulePage = () => {
     const [trainSchedules, setTrainSchedules] = useState(null)

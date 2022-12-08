@@ -1,9 +1,9 @@
 import {useEffect, useState} from "react";
 import {useLocation, useParams} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 import {stationsService} from "../../services";
 import {StationDetails, StationForm} from "../../components";
-import {useSelector} from "react-redux";
 
 export const StationPage = () => {
     const [station, setStation] = useState(null)

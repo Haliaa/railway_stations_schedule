@@ -1,4 +1,5 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
+
 import {trainsReducer, stationsReducer, schedulesReducer} from "./slices";
 
 const rootReducer = combineReducers({
