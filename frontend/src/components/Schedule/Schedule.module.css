@@ -3,6 +3,11 @@
     margin-left: 10px;
 }
 
+.buttonGetDetails {
+    background-color: rgb(244, 244, 244);
+    margin-left: 10px;
+}
+
 .buttonDelete {
     background-color: rgb(255, 59, 59);
     margin-left: 20px;

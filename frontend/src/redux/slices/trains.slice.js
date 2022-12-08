@@ -17,13 +17,13 @@ const getAll = createAsyncThunk(
         return data
     }
 );
-// const getById = createAsyncThunk(
-//     'trainsSlice/getById',
-//     async ({id})=>{
-//         const {data} = await trainsService.getById(id);
-//         return data
-//     }
-// );
+const getById = createAsyncThunk(
+    'trainsSlice/getById',
+    async ({id})=>{
+        const {data} = await trainsService.getById(id);
+        return data
+    }
+);
 
 const deleteById = createAsyncThunk(
     'trainsSlice/deleteById',
@@ -89,7 +89,7 @@ const trainsSlice = createSlice({
 const {reducer:trainsReducer, actions:{createTrain, deleteTrainById, updateTrainById, setTrainForUpdate}} = trainsSlice;
 
 const trainsActions = {
-    getAll,create,deleteById,updateById,setTrainForUpdate
+    getAll,create,deleteById,updateById, getById, setTrainForUpdate
 }
 
 export {
