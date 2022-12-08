@@ -17,13 +17,13 @@ const getAll = createAsyncThunk(
         return data
     }
 );
-// const getById = createAsyncThunk(
-//     'stationsSlice/getById',
-//     async ({id})=>{
-//         const {data} = await stationsService.getById(id);
-//         return data
-//     }
-// );
+const getById = createAsyncThunk(
+    'stationsSlice/getById',
+    async ({id})=>{
+        const {data} = await stationsService.getById(id);
+        return data
+    }
+);
 
 const deleteById = createAsyncThunk(
     'stationsSlice/deleteById',
@@ -88,7 +88,7 @@ const stationsSlice = createSlice({
 
 const {reducer:stationsReducer, actions:{createStation, deleteStationById, updateStationById, setStationForUpdate}} = stationsSlice;
 const stationsActions = {
-    getAll,create,deleteById,updateById, setStationForUpdate
+    getAll,getById, create,deleteById,updateById, setStationForUpdate
 }
 
 export {

@@ -17,7 +17,7 @@ export const Schedule = ({schedule, schedule: {_id: id, arrival, departure, stop
         await dispatch(schedulesActions.setScheduleForUpdate({schedule}))
     }
     const getDetailsById = () => {
-        navigate(`${id}`)
+        navigate(`/schedules/${id}`)
     }
 
     return (
@@ -30,7 +30,7 @@ export const Schedule = ({schedule, schedule: {_id: id, arrival, departure, stop
             justifyContent: "space-between"
         }}>
 
-            <div>{id} -- {arrival} -- {departure} -- {stop} -- {platform} -- {trainId} -- {stationId}</div>
+            <div> arrival: {arrival} -- departure: {departure} -- stop: {stop} -- platform: {platform} -- trainId: {trainId} -- station: {stationId}</div>
             <div>
                 <button className={css.buttonDelete} onClick={deleteById}>delete</button>
                 <button className={css.buttonUpdate} onClick={updateById}>update</button>
