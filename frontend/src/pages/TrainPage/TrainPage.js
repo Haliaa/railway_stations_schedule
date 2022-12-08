@@ -9,7 +9,6 @@ export const TrainPage = () => {
     const [train, setTrain] = useState(null);
     const {trainForUpdate} = useSelector(state => state.trains)
 
-
     const {state} = useLocation()
     const {id} = useParams()
 

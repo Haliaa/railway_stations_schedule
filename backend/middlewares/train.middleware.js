@@ -22,7 +22,7 @@ module.exports = {
 
             const train = await trainService.findTrain({name})
             if (train) {
-                return next(new CError(`Train with email ${name} already exists`, 409))
+                return next(new CError(`Train with name ${name} already exists`, 409))
             }
 
             req.train = train;

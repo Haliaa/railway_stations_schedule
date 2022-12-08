@@ -5,11 +5,15 @@ const {stationNameValidator, platformValidator
 
 module.exports = {
     findAll: Joi.object({
+        name: stationNameValidator,
+        platforms: platformValidator
+    }),
+    newStation: Joi.object({
         name: stationNameValidator.required(),
         platforms: platformValidator.required()
     }),
-    newClientValidator: Joi.object({
-        name: stationNameValidator.required(),
-        platforms: platformValidator.required()
-    }),
+    updateStation: Joi.object({
+        name: stationNameValidator,
+        platforms: platformValidator
+    })
 }

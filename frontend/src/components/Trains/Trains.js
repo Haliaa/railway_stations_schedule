@@ -6,7 +6,7 @@ import {Train} from "../Train/Train";
 
 
 export const Trains = () => {
-    const {trains, status,trainForUpdate } = useSelector(state => state.trains)
+    const {trains, status} = useSelector(state => state.trains)
     const [trainsUpdated, setTrainsUpdated] = useState([])
     const dispatch = useDispatch()
 
@@ -15,7 +15,7 @@ export const Trains = () => {
             .then(data => {
                 setTrainsUpdated(data?.payload)
             })
-    }, [trainsUpdated])
+    }, [trains])
 
 
     return (

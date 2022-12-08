@@ -18,7 +18,7 @@ export const Stations = () => {
         <div>
             {status && <h1>{status}</h1>}
             <br/>
-            {stationsUpdated.map(stationUpdated => <Station key={stationUpdated._id} station={stationUpdated}/>)}
+            {stationsUpdated && stationsUpdated.map(stationUpdated => <Station key={stationUpdated._id} station={stationUpdated}/>)}
         </div>
     );
 };

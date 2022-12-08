@@ -1,34 +1,32 @@
 const stationsRouter = require("express").Router()
 
-// const {commonMiddleware, fileMiddleware, clientMiddleware}= require('../middlewares')
-// const {clientValidator, queryValidator} = require('../validators')
+const {commonMiddleware, stationMiddleware}= require('../middlewares')
 const stationsController = require('../controllers/stations.controller')
+const {stationsValidator} = require("../validators");
 
 stationsRouter.get('/',
-    // commonMiddleware.isDateValid(queryValidator.findAll, 'query'),
+    commonMiddleware.isDateValid(stationsValidator.findAll, 'query'),
     stationsController.getStations)
 
 stationsRouter.get('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    stationMiddleware.isStationPresent,
     stationsController.getStation)
 
 stationsRouter.post('/',
-    // commonMiddleware.isDateValid(clientValidator.newClientValidator),
-    // fileMiddleware.checkClientAvatar,
-    // clientMiddleware.isClientUnique,
+    commonMiddleware.isDateValid(stationsValidator.newStation),
+    stationMiddleware.isStationUnique,
     stationsController.postStation)
 
 stationsRouter.put('/:id',
-    // commonMiddleware.isIdValid,
-    // fileMiddleware.checkClientAvatar,
-    // commonMiddleware.isDateValid(clientValidator.updateClientValidator),
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    commonMiddleware.isDateValid(stationsValidator.updateStation),
+    stationMiddleware.isStationPresent,
     stationsController.updateStation)
 
 stationsRouter.delete('/:id',
-    // commonMiddleware.isIdValid,
-    // clientMiddleware.isClientPresent,
+    commonMiddleware.isIdValid,
+    stationMiddleware.isStationPresent,
     stationsController.deleteStation)
 
 module.exports = stationsRouter;
