@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
-    "server": "nodemon ./index.js",
+    "server": "node ./index.js",
     "client": "npm start --prefix ../frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "startproject": "concurrently \"npm run server\" \"npm run client\"",
     "build": "npm install && npm install --prefix ../frontend && npm run build --prefix ../frontend"
   },
   "author": "haliaaaa",
@@ -19,5 +19,8 @@
     "express-fileupload": "^1.4.0",
     "joi": "^17.7.0",
     "mongoose": "^6.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.3"
   }
 }
