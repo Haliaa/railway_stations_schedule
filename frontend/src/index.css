@@ -18,13 +18,13 @@
 }
 
 .table th.up {
-  background-image: url('./components/Table/images/up_arrow.png');
+  /* background-image: url('./components/Table/images/up_arrow.png'); */
 }
 .table th.down {
-  background-image: url("./components/Table/images/down_arrow.png");
+  /* background-image: url("./components/Table/images/down_arrow.png"); */
 }
 .table th.default {
-  background-image: url("./components/Table/images/default.png");
+  /* background-image: url("./components/Table/images/default.png"); */
 }
 th.up,
 th.default,

@@ -13,7 +13,7 @@ export const Schedules = () => {
     useEffect(() => {
         dispatch(schedulesActions.getAll())
             .then(data => setSchedulesUpdated(data?.payload))
-    }, [schedules])
+    }, [schedules, dispatch])
 
 
     return (

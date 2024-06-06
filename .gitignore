@@ -1,2 +1,5 @@
 # Project exclude paths
 /frontend/node_modules/
+backend/.env
+/backend/node_modules
+backend/package-lock.json
