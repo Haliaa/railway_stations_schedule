@@ -1,9 +1,9 @@
 const baseURL = process.env.REACT_APP_API
 
 const urls = {
-    trains: '/trains',
-    stations: '/stations',
-    schedules: '/schedules'
+    trains: '/api/trains',
+    stations: '/api/stations',
+    schedules: '/api/schedules'
 }
 
 module.exports = {

@@ -33,9 +33,9 @@ const path = require("path");
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 // Route setup
-app.use("/trains", trainsRouter);
-app.use("/stations", stationsRouter);
-app.use("/schedules", schedulesRouter);
+app.use("/api/trains", trainsRouter);
+app.use("/api/stations", stationsRouter);
+app.use("/api/schedules", schedulesRouter);
 
 // Catch-all route to serve the React frontend
 app.get("*", (req, res) => {
