@@ -17,7 +17,7 @@ export const TrainForm = () => {
             setValue('name', name);
             setValue('kind', kind);
         }
-    }, [trainForUpdate, submit])
+    }, [trainForUpdate])
 
     const submit = async (newTrain) => {
         if (trainForUpdate) {
