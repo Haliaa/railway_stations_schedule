@@ -11,6 +11,14 @@ export const TrainForm = () => {
     const dispatch = useDispatch()
     const {formErrors, trainForUpdate} = useSelector(state => state.trains);
 
+    useEffect(() => {
+        if (trainForUpdate) {
+            const {name, kind} = trainForUpdate
+            setValue('name', name);
+            setValue('kind', kind);
+        }
+    }, [trainForUpdate, submit])
+
     const submit = async (newTrain) => {
         if (trainForUpdate) {
             await dispatch(trainsActions.updateById({id: trainForUpdate._id, train: newTrain}))
@@ -19,13 +27,6 @@ export const TrainForm = () => {
         }
         reset();
     }
-    useEffect(() => {
-        if (trainForUpdate) {
-            const {name, kind} = trainForUpdate
-            setValue('name', name);
-            setValue('kind', kind);
-        }
-    }, [trainForUpdate, submit])
 
     return (
         <form onSubmit={handleSubmit(submit)} style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
