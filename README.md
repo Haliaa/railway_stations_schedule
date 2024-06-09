@@ -7,7 +7,7 @@ Download or clone this project by running this command from your terminal:
 git clone https://github.com/Haliaa/railway_stations_schedule 
 ```
 
-Install all the necessary dependencies in the local `node_modules` folder.
+Install all the necessary dependencies in the local node_modules folder.
 ```
 npm install
 ```
