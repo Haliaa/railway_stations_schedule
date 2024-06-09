@@ -1,6 +1,6 @@
 # Railway station shedule app
 
-### To run projects locally on your machine do next steps.
+#### To run projects locally on your machine do next steps.
 
 Download or clone this project by running this command from your terminal:
 ```
